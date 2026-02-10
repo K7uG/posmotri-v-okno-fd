@@ -54,6 +54,7 @@ ol {
 
 /*---content--*/
 .content{
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,6 +63,8 @@ ol {
   gap:30px;
   border: 1px solid #efd1d1; /* Для наглядности */ 
   flex-direction: row;    /* Располагаем элементы в строку */  
+
+
    
    }
 
@@ -69,6 +72,19 @@ ol {
 
 /*-----------------result-------------------------*/
  .result{
+  
+grid-area: result;
+display: grid;  
+grid-template-columns: repeat(3, 1fr); /* 3 равные колонки */  
+grid-template-rows: repeat(5, 1fr); /* 5 строк  */  
+gap: 10px; /* отступы между элементами */  
+grid-auto-columns: auto;
+grid-template-areas:
+"video video video"
+"video video video"
+"video video video"
+"search-form search-form search-form";
+   
 width: 711px;
 height: 456px;
 justify-content: left;
@@ -76,10 +92,17 @@ border: 1px solid #E32636; /* Для наглядности */
  } 
 /*---video--*/
 .result__video-container{
+  
    border: 1px dotted #34C924;
 }
 
 .result__video{
+  display:grid;
+  grid-area: video;
+  grid-column: 1/4;
+  grid-row: 1/4;
+  width:711px;
+  height: 386px;
   border: 1px dotted #34C924;
 }
 
@@ -90,13 +113,12 @@ border: 1px solid #E32636; /* Для наглядности */
 /*---не-найдено--*/
 
 
-
-
-
-/*--  search-form--------------------- -*/
+/*--  search-form-------------*/
 .search-form{
+  grid-area: search-form;
   width: inherit;
  border: 1px dotted #34C924;
+ display: flex;
 }
 
 .search-form__fieldset{
@@ -106,12 +128,23 @@ border: 1px solid #E32636; /* Для наглядности */
 /*--Город--*/
 .search-form__fieldset:nth-child(1){
   border: 1px dotted #E32636;
+  display: flex;
+  grid-area: city;
+   grid-column: 1/2;
+  grid-row: 5/6;
+  width: 225px;
+  height: 54px;
 
 }
  /*--Время суток--*/
 .search-form__fieldset:nth-child(2){
   border: 1px dotted #E32636;
-
+  display: flex;
+  grid-area: time;
+   grid-column: 2/3;
+    grid-row: 5/6;
+  width: 212px;
+  height: 49px;
 }
 /*---инпут без данных--*/
 /*---инпут с данными--*/
@@ -121,7 +154,16 @@ border: 1px solid #E32636; /* Для наглядности */
 
 .search-form__submit-button{
  border: 1px dotted #E32636;
+display: flex;
+  grid-area: button;
+   grid-column: 3/4;
+   grid-row: 5/6;
+  width: 194px;
+  height: 34px;
 }
+
+
+
 /*-----------------details---------------------*/
  /*--------title---------*/
 
@@ -129,9 +171,17 @@ border: 1px solid #E32636; /* Для наглядности */
 
 
  /*-----searche results----------------------*/
+  .content__details {
+width: 399px;
+height: 534px;
+justify-content: right;
+align-items: center;
+border: 1px solid blue ;/* Для наглядности */ 
+ }
 
  
  /*-----searche results---*/
+
 
  /*--card-list--*//*--*/
 
@@ -161,10 +211,3 @@ border: 1px solid #E32636; /* Для наглядности */
 
 
 
- .content__details {
-width: 399px;
-height: 534px;
-justify-content: right;
-align-items: center;
-border: 1px solid blue ;/* Для наглядности */ 
- }
