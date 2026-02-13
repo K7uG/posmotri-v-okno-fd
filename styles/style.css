@@ -1,7 +1,19 @@
+.pixel-perfect-image {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  filter: sepia(0.6);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: #e32636 solid 1px;
 }
 
 html {
@@ -13,11 +25,10 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  display:flex;
-  
+  display: flex;
 }
 
 h1,
@@ -49,60 +60,58 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 
-
 /*---content--*/
-.content{
-  
+.content {
   display: flex;
-  align-items: center;
   width: 1140px;
   height: 534px;
-  gap:30px;
-  border: 1px solid #efd1d1; /* Для наглядности */ 
-  flex-direction: row;    /* Располагаем элементы в строку */  
-   
-   }
+  gap: 30px;
+  border: 1px solid #efd1d1; /* Для наглядности */
+  flex-direction: row; /* Располагаем элементы в строку */
+  margin: auto;
+  padding: 0;
+}
 
 /*---content на большом экране--*/
 
 /*-----------------result-------------------------*/
- .result{
-  
-grid-area: result;
-display: grid;  
-grid-template-columns: repeat(3, 1fr); /* 3 равные колонки */  
-grid-template-rows: repeat(5, 1fr); /* 5 строк  */  
-gap: 10px; /* отступы между элементами */  
-grid-auto-columns: auto;
-grid-template-areas:
-"video video video"
-"video video video"
-"video video video"
-"search-form search-form search-form";
+.result {
+  grid-area: result;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 равные колонки */
+  grid-template-rows: repeat(5, 1fr); /* 5 строк  */
+  grid-auto-columns: auto;
+  grid-template-areas:
+    "video video video"
+    "video video video"
+    "video video video"
+    "search-form search-form search-form";
 
-   
-width: 711px;
-height: 456px;
-justify-content: left;
-border: 1px solid #E32636; /* Для наглядности */ 
- } 
+  width: 711px;
+  height: 456px;
+  justify-content: left;
+  padding: 0;
+  margin: 0;
+}
 /*---video--*/
-.result__video-container{
-  
-   border: 1px dotted #34C924;
+.result__video-container {
+  margin: 0;
+  padding: 0;
 }
 
-.result__video{
-  display:grid;
+.result__video {
+  display: grid;
   grid-area: video;
   grid-column: 1/4;
   grid-row: 1/4;
-  width:711px;
+  width: 711px;
   height: 386px;
-  border: 1px dotted #34C924;
+  margin: 78px 0 0 0;
+  padding: 0;
+  object-fit: fill;
 }
 
 /*-статусы видео-*/
@@ -111,181 +120,270 @@ border: 1px solid #E32636; /* Для наглядности */
 
 /*---не-найдено--*/
 
-
 /*--  search-form-------------*/
-.search-form{
+.search-form {
   grid-area: search-form;
   width: inherit;
- border: 1px dotted #34C924;
- display: flex;
+  display: flex;
+  padding: 0;
+  margin: 16px 0 0 0;
 }
 
-.search-form__fieldset{
-   border: 1px dotted orange;
+.search-form__fieldset-title {
+  padding: 0;
+  margin: 0;
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /*--Город--*/
-.search-form__fieldset:nth-child(1){
-  border: 1px dotted #E32636;
+.search-form__fieldset:nth-child(1) {
   display: flex;
   grid-area: city;
-   grid-column: 1/2;
-  grid-row: 5/6;
+  grid-column: 1/2;
+  grid-row: 5;
   width: 225px;
   height: 54px;
-
+  flex-direction: column;
+  margin: 0 40px 0 0;
+  padding: 0;
 }
- /*--Время суток--*/
-.search-form__fieldset:nth-child(2){
-  border: 1px dotted #E32636;
+.search-form__textfield {
+  background: transparent; /* Прозрачный фон */
+}
+
+/*--Время суток--*/
+.search-form__fieldset:nth-child(2) {
   display: flex;
   grid-area: time;
-   grid-column: 2/3;
-    grid-row: 5/6;
+  grid-column: 2/3;
+  grid-row: 5;
   width: 212px;
   height: 49px;
+  flex-direction: column;
+  margin: 0 40px 0 0;
+  padding: 0;
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-style: normal;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  letter-spacing: 0;
 }
+.search-form__fieldset:nth-child(2) h2 {
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-style: normal;
+}
+.search-form__label-text {
+  width: 35px;
+  height: 22px;
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
 /*---инпут без данных--*/
 /*---инпут с данными--*/
 
-
 /*---button---*/
 
-.search-form__submit-button{
- border: 1px dotted #E32636;
-display: flex;
-  grid-area: button;
-   grid-column: 3/4;
-   grid-row: 5/6;
+.search-form__submit-button {
+  display: flex;
   width: 194px;
-  height: 34px;
+  min-height: 34px;
+  border: 1px solid white; /* Белая граница толщиной 1 пиксель */
+  background: transparent; /* Прозрачный фон */
+  /* border-radius: 5px; /* Скругленные углы (можно убрать, если не нужно) */
+  cursor: pointer; /* Изменение курсора при наведении */
+  padding: 0; /* Убираем отступы */
+  outline: none; /* Убираем выделение при клике */
+  color: #fff;
+  text-transform: lowercase;
+  font-size: 18px;
+  z-index: 3;
+  margin: 20px 0 0 0;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  font-weight: 400;
+  font-style: normal;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  text-transform: capitalize;
 }
-
-
+.button search-form__submit-button {
+}
 
 /*-----------------details---------------------*/
- .content__details {
-grid-area: details;
-display: grid;  
-grid-template-columns: repeat(6, 1fr); /* 6 равные колонки */  
-grid-template-rows: repeat(5, 1fr); /* 5 строк  */  
-gap: 10px; /* отступы между элементами */  
-grid-auto-columns: auto;
-
-
-width: 399px;
-height: 534px;
-border: 1px solid blue ;/* Для наглядности */ 
-
-  overflow-x:hidden;
- overflow-y: auto;
- 
- }
-
-
- /*--------title---------*/
-.title{
-grid-area: title;
-grid-column: 1/5;
-grid-row: 1/3;
-width: 259px;
-height: 210px;
-font-weight: 700;
-font-size: 75px;
-line-height: 94%;
-font-size: 75px;
-letter-spacing: 0;
-font-family: Oswald;
-font-style:bold;
-text-transform: uppercase;
-margin: 0 0 26px 0;
-
+.content__details {
+  grid-area: details;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 равные колонки */
+  grid-template-rows: repeat(5, 1fr); /* 5 строк  */
+  gap: 30px; /* отступы между элементами */
+  grid-auto-columns: auto;
+  width: 399px;
+  height: 534px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
+/*--------title---------*/
+.title {
+  grid-area: title;
+  grid-column: 1/5;
+  grid-row: 1/3;
+  width: 259px;
+  height: 210px;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  letter-spacing: 0;
+  font-family: Oswald;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+}
 
+.content__accent {
+  color: #545050;
+}
 
- /*-----searche results----------------------*/
- 
+/*-----searche results----------------------*/
 
- 
- /*-----searche results---*/
+/*-----searche results---*/
 
+/*--card-list--*/ /*--*/
+.content__list-container {
+  display: grid;
+  grid-area: content__list-container;
+  grid-column: 1/6;
+  grid-row: 3/4;
+  width: 299px;
+  height: 298px;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+.content__video-card-title {
+  color: #fff;
+  font-family: Oswald;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
- /*--card-list--*//*--*/
- .content__list-container{
-  display:grid;
-grid-area:content__list-container;
-grid-column: 1/6;
-grid-row: 3/4;
-width: 299px;
-height: 298px;
-color:red;
-flex-direction: row; 
- }
-
-
-
- /*-card-*/
-.content__list-item{
+/*-card-*/
+.content__list-item {
   grid-area: list-video;
   display: flex;
   width: 190px;
-height: 103px;
-color:burlywood;
-flex-direction: row;
-margin: 0 0 30px 0;
+  height: 103px;
+  color: burlywood;
+  flex-direction: row;
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+.content__card-link {
+  text-decoration: none;
 }
 
 .content__video-card {
   display: flex;
-  
+  align-items: start;
+  letter-spacing: 2px;
 }
 
-
- /*--description--*/
-.content__video-card-description-container{
-  display: flex;
+/*--description--*/
+.content__video-card-description-container {
   width: 196px;
-height: 103px;
-
-flex-direction:column; 
-align-items: flex-start;
+  height: 103px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 3;
+}
+.content__video-card-description {
+  color: #fff;
+  letter-spacing: normal;
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 16.2px;
+  letter-spacing: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-
-
- /*--preview------*/
-.content__video-card-thumbnail{
-   display: flex;
+/*--preview------*/
+.content__video-card-thumbnail {
   width: 194px;
-height: 103px; 
-align-items: flex-end;
-
+  height: 103px;
+  align-items: flex-end;
+  object-position: center;
+  object-fit: fill;
 }
 
+/*----статусы карточки--*/
+/*-default-*/
+/*-:active-*/
+/*-:hover-*/
+/*-:focus-visible-*/
 
+/*---после 4 карточки показать кнопку--*/
 
- /*----статусы карточки--*/
- /*-default-*/
- /*-:active-*/
- /*-:hover-*/
- /*-:focus-visible-*/
+/*--button--- -*/
 
+.button {
+  display: flex;
+  background: transparent; /* Прозрачный фон */
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* Прозрачный фон */
+  /* border-radius: 5px; /* Скругленные углы (можно убрать, если не нужно) */
+  cursor: pointer; /* Изменение курсора при наведении */
+  padding: 0; /* Убираем отступы */
+  outline: none; /* Убираем выделение при клике */
+  color: #fff;
+  border: 1px solid white; /* Белая граница толщиной 1 пиксель */
+  height: 34px;
+  z-index: 3;
+  font-family: Fira Sans Condensed;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+}
 
+.more-button {
+  width: 390px;
+}
 
- /*---после 4 карточки показать кнопку--*/
-
-
- /*--button--- -*/
-
-
-
- /*-----scrollbar---------*/
- 
-
-
-
-
-
-
-
+/*-----scrollbar---------*/
