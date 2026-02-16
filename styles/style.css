@@ -178,12 +178,34 @@ ol {
   background: transparent; /* Прозрачный фон */
   border-top: solid 1px white;
   border-bottom: solid 1px white;
+  border-left: none;
+  border-right: none;
   color: #fff;
   appearance: none;
 }
 
-.search-form__textfield:focus-visible .search-form__textfield::placeholder {
+.search-form__textfield::placeholder {
   color: rgb(255 255 255 / 0.7);
+}
+
+/*---город-фокус-*/
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid white;
+}
+
+.search-form__label:focus {
+  position: relative;
+  display: block;
+  width: 100%;
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 3px solid white;
 }
 
 /*--Время суток--*/
@@ -211,6 +233,43 @@ ol {
 }
 .search-form__checkbox-list {
   display: flex;
+}
+
+.search-form__pseudo-checkbox {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  gap: 1px;
+  position: relative;
+  cursor: pointer;
+}
+.search-form__pseudo-checkbox::after {
+  content: ""; /* Создаем псевдоэлемент без содержимого */
+  display: block; /* Делаем псевдоэлемент блочным */
+  background-color: white; /* Белый цвет фона */
+  width: 100%; /* Ширина 100% */
+  height: 100%; /* Высота 100% */
+  opacity: 0; /* Полностью прозрачный */
+  gap: 1px;
+}
+
+.search-form__pseudo-checkbox input:checked {
+  content: ""; /* Создаем псевдоэлемент без содержимого */
+  display: block; /* Делаем псевдоэлемент блочным */
+  background-color: white; /* Белый цвет фона */
+  width: 100%; /* Ширина 100% */
+  height: 100%; /* Высота 100% */
+
+  opacity: 1;
+}
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
 }
 
 .search-form__label-text {
