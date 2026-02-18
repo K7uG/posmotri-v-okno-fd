@@ -473,10 +473,52 @@ ol {
   line-height: 100%;
   letter-spacing: 0;
   text-align: center;
+  text-decoration: none;
+  position: relative; 
+}
+.button:hover{
+text-decoration:underline;
 }
 
-.more-button {
-  width: 390px;
+.button:active{
+background-color: #545050;
+
+
 }
+.button:focus{
+outline: none;
+}
+.button:focus-visible{
+border: 2px solid #FFFFFF;
+ outline: none;
+}
+
+
+.more-button {
+   width: 390px;
+  display: flex; /* Как бы нам хотелось `display: упражнение "жим-лежа"`, но пока что подойдет `block` */
+  box-sizing: border-box;
+}
+
+
+.button::before {  
+        content: '';  
+        position: absolute;  
+        top: -2px; /* Размер обводки сверху */  
+        right: -2px; /* Размер обводки справа */  
+        bottom: -2px; /* Размер обводки снизу */  
+        left: -2px; /* Размер обводки слева */  
+        border: 1px solid white; /* Цвет и толщина обводки */  
+        pointer-events: none; /* Делаем псевдоэлемент некликабельным */  
+        transform: translate3d(0, 0, 0); /* Оптимизация для анимации */  
+        opacity: 0;
+    }  
+      
+    /* Эффект при наведении */  
+    .button:focus-visible::before {  
+        border-color:white;
+           opacity: 1;  
+    }  
+
 
 /*-----scrollbar---------*/
