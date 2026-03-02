@@ -1,3 +1,5 @@
+
+/*убрать*/
 .pixel-perfect-image {
   position: fixed;
   top: 0;
@@ -13,6 +15,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /*убрать*/
+  outline: 1px solid red;
 }
 
 html {
@@ -28,6 +32,7 @@ html {
   font-size: 18px;
   background-color: #1b1919;
   display: flex;
+  position: relative;
 }
 
 h1,
@@ -49,7 +54,7 @@ ol {
   list-style: none;
 }
 
-/* Кастомный скроллбар */
+/* Кастомный скроллбар 
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
@@ -60,7 +65,7 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #d9d9d9;
-}
+}*/
 
 /*---content--*/
 .content {
@@ -68,7 +73,7 @@ ol {
   width: 1140px;
   height: 534px;
   gap: 30px;
-  border: 1px solid #efd1d1; /* Для наглядности */
+ /* border: 15px solid #efd1d1; /* Для наглядности */
   flex-direction: row; /* Располагаем элементы в строку */
   margin: auto;
   padding: 0;
@@ -130,10 +135,20 @@ ol {
   margin: 16px 0 0 0;
 }
 .search-form__label {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  gap: 30px;
+  display: flex;
+  
+  justify-content:inherit;
+  width:100%;
+box-sizing: border-box
+ 
+}
+
+
+.search-form__fieldset{
+  /*outline: 5px green dotted;*/
+ 
+  border:none;
+  gap:5px;
 }
 
 .search-form__fieldset-title {
@@ -145,6 +160,7 @@ ol {
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0;
+  width: inherit;
 }
 
 .visually-hidden {
@@ -182,6 +198,9 @@ ol {
   border-right: none;
   color: #fff;
   appearance: none;
+  margin:3px 0 0 0;
+  padding: 0;
+   width: inherit;
 }
 
 .search-form__textfield::placeholder {
@@ -205,7 +224,7 @@ ol {
 }
 
 .search-form__label:has(:focus-visible) {
-  outline: 3px solid white;
+  outline: 1px solid white;
 }
 
 /*--Время суток--*/
@@ -233,29 +252,37 @@ ol {
 }
 .search-form__checkbox-list {
   display: flex;
+  gap:15px;
+  margin: 1.5px 0 0 0;
+ 
 }
 
 .search-form__pseudo-checkbox {
   content: "";
-  width: 20px;
-  height: 20px;
-  border: 2px solid white;
-  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border: 1px solid white;
   gap: 1px;
   position: relative;
   cursor: pointer;
+  margin: 1.5px 5px 1.5px 0;
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+ 
 }
 
 .search-form__pseudo-checkbox::before {
   content: " "; /* Создаем псевдоэлемент без содержимого */
   display: inline-block; /* Делаем псевдоэлемент блочным */
   background-color: white; /* Белый цвет фона */
-  width: 100%; /* Ширина 100% */
-  height: 100%; /* Высота 100% */
+  width: 80%; /* Ширина 100% */
+  height:  80%;/* Высота 100% */
   opacity: 0; /* Полностью прозрачный */
   gap: 1px;
   position: absolute;
   transition: 0.2s;
+  
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
@@ -268,25 +295,24 @@ ol {
   text-decoration: underline;
 }
 /*--выделяем чекбокс розовым при выделении табом--*/
-.search-form__pseudo-checkbox::after {
+/*.search-form__pseudo-checkbox::after {
   content: " "; /* Создаем псевдоэлемент без содержимого */
-  display: inline-block; /* Делаем псевдоэлемент блочным */
-  outline: 3px solid plum;
-  position: absolute;
+  /*display: inline-block; /* Делаем псевдоэлемент блочным */
+  /*outline: 3px solid plum;*/
+  /*position: absolute;
   opacity: 0;
   width: 100%; /* Ширина 100% */
-  height: 100%; /* Высота 100% */
-}
+  /*height: 100%; /* Высота 100% */
+/*}*/
 
 .search-form__checkbox:focus-visible ~ .search-form__pseudo-checkbox::after {
   opacity: 1;
 }
 
-/* When the checkbox is checked, add a blue background */
+
 
 .search-form__label-text {
-  width: 35px;
-  height: 22px;
+ 
   font-family: Fira Sans Condensed;
   font-weight: 400;
   font-style: normal;
@@ -294,6 +320,7 @@ ol {
   line-height: 100%;
   letter-spacing: 0;
   text-decoration: none;
+  margin: 1.5px 0 1.5px 0;
 }
 
 /*---инпут без данных--*/
@@ -302,31 +329,11 @@ ol {
 /*---button---*/
 
 .search-form__submit-button {
-  display: flex;
-  width: 194px;
+  width: 100%;
   min-height: 34px;
-  border: 1px solid white; /* Белая граница толщиной 1 пиксель */
-  background: transparent; /* Прозрачный фон */
-  /* border-radius: 5px; /* Скругленные углы (можно убрать, если не нужно) */
-  cursor: pointer; /* Изменение курсора при наведении */
-  padding: 0; /* Убираем отступы */
-  outline: none; /* Убираем выделение при клике */
-  color: #fff;
-  text-transform: lowercase;
-  font-size: 18px;
-  z-index: 3;
   margin: 20px 0 0 0;
-  justify-content: center;
-  align-items: center;
-  align-self: flex-end;
-  font-weight: 400;
-  font-style: normal;
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
-  text-transform: capitalize;
 }
-.button search-form__submit-button {
-}
+
 
 /*-----------------details---------------------*/
 .content__details {
@@ -508,6 +515,10 @@ ol {
   text-align: center;
   text-decoration: none;
   position: relative;
+  text-transform: lowercase;
+  box-sizing: border-box;
+ 
+  
 }
 .button:hover {
   text-decoration: underline;
@@ -527,7 +538,7 @@ ol {
 .more-button {
   width: 390px;
   display: flex; /* Как бы нам хотелось `display: упражнение "жим-лежа"`, но пока что подойдет `block` */
-  box-sizing: border-box;
+
 }
 
 .button::before {
@@ -571,7 +582,7 @@ ol {
   position: absolute;
   top: 0;
   left: 0;
-  width: 390px;
+  width: 100%;
   height: 100%;
   z-index: 1000;
 }
