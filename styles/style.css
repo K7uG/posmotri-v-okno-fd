@@ -1,13 +1,12 @@
-
 /*убрать*/
-.pixel-perfect-image {
+/*.pixel-perfect-image {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0.5;
   filter: sepia(0.6);
-}
+}*/
 
 *,
 *::before,
@@ -16,7 +15,7 @@
   margin: 0;
   padding: 0;
   /*убрать*/
-  outline: 1px solid red;
+  /*outline: 1px solid red;*/
 }
 
 html {
@@ -28,7 +27,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   display: flex;
@@ -71,9 +70,9 @@ ol {
 .content {
   display: flex;
   width: 1140px;
-  height: 534px;
+  height: 50%;
   gap: 30px;
- /* border: 15px solid #efd1d1; /* Для наглядности */
+  /* border: 15px solid #efd1d1; /* Для наглядности */
   flex-direction: row; /* Располагаем элементы в строку */
   margin: auto;
   padding: 0;
@@ -95,7 +94,7 @@ ol {
     "search-form search-form search-form";
 
   width: 711px;
-  height: 456px;
+  height: 50%;
   justify-content: left;
   padding: 0;
   margin: 0;
@@ -108,10 +107,6 @@ ol {
 }
 
 .result__video {
-  display: grid;
-  grid-area: video;
-  grid-column: 1/4;
-  grid-row: 1/4;
   width: 711px;
   height: 386px;
   margin: 78px 0 0 0;
@@ -131,30 +126,33 @@ ol {
 
   width: inherit;
   display: flex;
-  padding: 0;
-  margin: 16px 0 0 0;
+
+  margin: 16px 0 1.5px 0;
 }
 .search-form__label {
   display: flex;
-  
-  justify-content:inherit;
-  width:100%;
-box-sizing: border-box
- 
+  justify-content: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-
-.search-form__fieldset{
+.search-form__fieldset {
   /*outline: 5px green dotted;*/
- 
-  border:none;
-  gap:5px;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  gap: 5px;
 }
 
 .search-form__fieldset-title {
   padding: 0;
   margin: 0;
-  font-family: Fira Sans Condensed;
+  font-family:
+    Fira Sans Condensed,
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -183,14 +181,12 @@ box-sizing: border-box
   grid-column: 1/2;
   grid-row: 5;
   width: 225px;
-  height: 54px;
   flex-direction: column;
   margin: 0 40px 0 0;
   padding: 0;
   border: unset;
 }
 .search-form__textfield {
-  display: flex;
   background: transparent; /* Прозрачный фон */
   border-top: solid 1px white;
   border-bottom: solid 1px white;
@@ -198,9 +194,9 @@ box-sizing: border-box
   border-right: none;
   color: #fff;
   appearance: none;
-  margin:3px 0 0 0;
+  margin: 3px 0 0 0;
   padding: 0;
-   width: inherit;
+  width: inherit;
 }
 
 .search-form__textfield::placeholder {
@@ -217,9 +213,6 @@ box-sizing: border-box
 }
 
 .search-form__label:focus {
-  position: relative;
-  display: block;
-  width: 100%;
   outline: none;
 }
 
@@ -234,27 +227,30 @@ box-sizing: border-box
   grid-column: 2/3;
   grid-row: 5;
   width: 212px;
-  height: 49px;
   flex-direction: column;
   margin: 0 40px 0 0;
   padding: 0;
-  font-family: Fira Sans Condensed;
+  font-family:
+    Fira Sans Condensed,
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-family: Fira Sans Condensed;
   font-size: 18px;
   letter-spacing: 0;
 }
-.search-form__fieldset:nth-child(2) h2 {
-  font-family: Fira Sans Condensed;
+.search-form__fieldset:nth-child(2) .search-form__fieldset-title {
+  font-family:
+    Fira Sans Condensed,
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 .search-form__checkbox-list {
   display: flex;
-  gap:15px;
+  gap: 15px;
   margin: 1.5px 0 0 0;
- 
 }
 
 .search-form__pseudo-checkbox {
@@ -264,12 +260,11 @@ box-sizing: border-box
   border: 1px solid white;
   gap: 1px;
   position: relative;
-  cursor: pointer;
+
   margin: 1.5px 5px 1.5px 0;
-  display: inline-flex; 
-  align-items: center; 
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
- 
 }
 
 .search-form__pseudo-checkbox::before {
@@ -277,12 +272,11 @@ box-sizing: border-box
   display: inline-block; /* Делаем псевдоэлемент блочным */
   background-color: white; /* Белый цвет фона */
   width: 80%; /* Ширина 100% */
-  height:  80%;/* Высота 100% */
+  height: 80%; /* Высота 100% */
   opacity: 0; /* Полностью прозрачный */
   gap: 1px;
-  position: absolute;
+  position: relative;
   transition: 0.2s;
-  
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
@@ -297,23 +291,23 @@ box-sizing: border-box
 /*--выделяем чекбокс розовым при выделении табом--*/
 /*.search-form__pseudo-checkbox::after {
   content: " "; /* Создаем псевдоэлемент без содержимого */
-  /*display: inline-block; /* Делаем псевдоэлемент блочным */
-  /*outline: 3px solid plum;*/
-  /*position: absolute;
+/*display: inline-block; /* Делаем псевдоэлемент блочным */
+/*outline: 3px solid plum;*/
+/*position: absolute;
   opacity: 0;
   width: 100%; /* Ширина 100% */
-  /*height: 100%; /* Высота 100% */
+/*height: 100%; /* Высота 100% */
 /*}*/
 
 .search-form__checkbox:focus-visible ~ .search-form__pseudo-checkbox::after {
   opacity: 1;
 }
 
-
-
 .search-form__label-text {
- 
-  font-family: Fira Sans Condensed;
+  font-family:
+    Fira Sans Condensed,
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -331,9 +325,9 @@ box-sizing: border-box
 .search-form__submit-button {
   width: 100%;
   min-height: 34px;
-  margin: 20px 0 0 0;
+  margin: 16px 0 4px 0;
+  text-transform: capitalize;
 }
-
 
 /*-----------------details---------------------*/
 .content__details {
@@ -341,12 +335,13 @@ box-sizing: border-box
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 равные колонки */
   grid-template-rows: repeat(5, 1fr); /* 5 строк  */
-  gap: 30px; /* отступы между элементами */
   grid-auto-columns: auto;
   width: 399px;
-  height: 534px;
+  min-height: 534px;
   overflow-x: hidden;
   overflow-y: auto;
+  padding: 0;
+  margin: 0;
 }
 
 /*--------title---------*/
@@ -360,9 +355,9 @@ box-sizing: border-box
   font-size: 75px;
   line-height: 94%;
   letter-spacing: 0;
-  font-family: Oswald;
+  font-family: Oswald, Arial, sans-serif;
   text-transform: uppercase;
-  margin: 0;
+  margin: 0 0 26px 0;
   padding: 0;
   opacity: 1;
 }
@@ -386,16 +381,14 @@ box-sizing: border-box
   flex-direction: row;
   margin: 0;
   padding: 0;
+  scroll-snap-type: inherit;
 }
 .content__video-card-title {
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, Arial, sans-serif;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 /*-card-*/
@@ -403,8 +396,6 @@ box-sizing: border-box
   grid-area: list-video;
   display: flex;
   width: 190px;
-  height: 103px;
-  color: burlywood;
   flex-direction: row;
   margin: 0 0 30px 0;
   padding: 0;
@@ -428,12 +419,12 @@ box-sizing: border-box
 
 .content__card-link::before {
   content: "";
-  position: absolute;
+  position: relative;
   top: -2px; /* Размер обводки сверху */
   right: -2px; /* Размер обводки справа */
   bottom: -2px; /* Размер обводки снизу */
   left: -2px; /* Размер обводки слева */
-  border: 1px solid white; /* Цвет и толщина обводки */
+  outline: 1px solid white; /* Цвет и толщина обводки */
   pointer-events: none; /* Делаем псевдоэлемент некликабельным */
   transform: translate3d(0, 0, 0); /* Оптимизация для анимации */
   opacity: 0;
@@ -453,7 +444,7 @@ box-sizing: border-box
 /*--description--*/
 .content__video-card-description-container {
   width: 196px;
-  height: 103px;
+
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 3;
@@ -461,7 +452,10 @@ box-sizing: border-box
 .content__video-card-description {
   color: #fff;
   letter-spacing: normal;
-  font-family: Fira Sans Condensed;
+  font-family:
+    Fira Sans Condensed,
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -478,7 +472,7 @@ box-sizing: border-box
   height: 103px;
   align-items: flex-end;
   object-position: center;
-  object-fit: fill;
+
   display: block;
   outline: none;
 }
@@ -494,7 +488,6 @@ box-sizing: border-box
 /*--button--- -*/
 
 .button {
-  display: flex;
   background: transparent; /* Прозрачный фон */
   align-items: center;
   justify-content: center;
@@ -505,9 +498,12 @@ box-sizing: border-box
   outline: none; /* Убираем выделение при клике */
   color: #fff;
   border: 1px solid white; /* Белая граница толщиной 1 пиксель */
-  height: 34px;
-  z-index: 3;
-  font-family: Fira Sans Condensed;
+  min-height: 34px;
+
+  font-family:
+    Fira Sans Condensed,
+    Arial,
+    sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
@@ -515,10 +511,7 @@ box-sizing: border-box
   text-align: center;
   text-decoration: none;
   position: relative;
-  text-transform: lowercase;
   box-sizing: border-box;
- 
-  
 }
 .button:hover {
   text-decoration: underline;
@@ -531,24 +524,22 @@ box-sizing: border-box
   outline: none;
 }
 .button:focus-visible {
-  border: 2px solid #ffffff;
-  outline: none;
+  outline: 2px solid #ffffff;
 }
 
 .more-button {
   width: 390px;
   display: flex; /* Как бы нам хотелось `display: упражнение "жим-лежа"`, но пока что подойдет `block` */
-
 }
 
 .button::before {
   content: "";
-  position: absolute;
+  position: relative;
   top: -2px; /* Размер обводки сверху */
   right: -2px; /* Размер обводки справа */
   bottom: -2px; /* Размер обводки снизу */
   left: -2px; /* Размер обводки слева */
-  border: 1px solid white; /* Цвет и толщина обводки */
+  outline: 1px solid white; /* Цвет и толщина обводки */
   pointer-events: none; /* Делаем псевдоэлемент некликабельным */
   transform: translate3d(0, 0, 0); /* Оптимизация для анимации */
   opacity: 0;
@@ -564,25 +555,7 @@ box-sizing: border-box
 /*--preloader--*/
 /* Позиционирование относительно .result__video-container */
 
-.preloader.relative-to-result {
-  /* Прелоадер будет позиционироваться относительно этого контейнера */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-}
-
 /* Позиционирование относительно .content__list-container */
 .content__list-container {
   position: relative;
-}
-.preloader.relative-to-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
 }

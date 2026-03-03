@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -12,15 +12,12 @@
   </head>
   <body class="page">
     <main class="content">
-
       <section class="result">
-        
         <div class="result__video-container">
           <video src="" controls class="result__video" poster=""></video>
         </div>
 
         <form class="search-form">
-
           <fieldset class="search-form__fieldset">
             <h2 class="search-form__fieldset-title">Город</h2>
             <label class="search-form__label">
@@ -29,7 +26,7 @@
                 type="text"
                 placeholder="Санкт Петербург, например"
                 name="city"
-                class=" search-form__label-text search-form__textfield"
+                class="search-form__label-text search-form__textfield"
               />
             </label>
           </fieldset>
@@ -43,10 +40,9 @@
                   name="time"
                   value="morning"
                   class="search-form__checkbox visually-hidden"
-                 
                 />
-                <span  class="search-form__pseudo-checkbox"></span>
-                <span  class="search-form__label-text">Утро</span>
+                <span class="search-form__pseudo-checkbox"></span>
+                <span class="search-form__label-text">Утро</span>
               </label>
               <label class="search-form__label">
                 <input
@@ -74,7 +70,6 @@
           <button type="submit" class="button search-form__submit-button">
             Найти
           </button>
-
         </form>
       </section>
 
@@ -92,7 +87,8 @@
 
     <!-- ТЕМПЛЕЙТЫ -->
 
-    <template class="preloader-template">  <!--  Шаблон прелоадера -->
+    <template class="preloader-template">
+      <!--  Шаблон прелоадера -->
       <div class="preloader">
         <div class="preloader-chasing-squares">
           <div class="square"></div>
@@ -103,7 +99,8 @@
       </div>
     </template>
 
-    <template class="cards-list-item-template"> <!--Шаблон пункта списка с карточкой видео — 
+    <template class="cards-list-item-template">
+      <!--Шаблон пункта списка с карточкой видео — 
       в него подставляются данные для создания нужного количества карточек.-->
       <li class="content__list-item">
         <a href="#0" class="content__card-link">
@@ -118,11 +115,13 @@
       </li>
     </template>
 
-    <template class="more-button-template"><!-- Шаблон кнопки «Показать ещё» -->
+    <template class="more-button-template"
+      ><!-- Шаблон кнопки «Показать ещё» -->
       <button class="button more-button">Показать еще</button>
     </template>
 
-    <template class="error-template"><!-- Шаблон блока с ошибкой  -->
+    <template class="error-template"
+      ><!-- Шаблон блока с ошибкой  -->
       <div class="error">
         <h2 class="error__title">Из этого города нет видео :(</h2>
       </div>
