@@ -293,9 +293,7 @@ ol {
   content: " "; /* Создаем псевдоэлемент без содержимого */
 /*display: inline-block; /* Делаем псевдоэлемент блочным */
 /*outline: 3px solid plum;*/
-/*position: absolute;
-  opacity: 0;
-  width: 100%; /* Ширина 100% */
+
 /*height: 100%; /* Высота 100% */
 /*}*/
 
@@ -460,7 +458,7 @@ ol {
   font-style: normal;
   font-size: 18px;
   line-height: 16.2px;
-  letter-spacing: 0;
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -491,7 +489,7 @@ ol {
   background: transparent; /* Прозрачный фон */
   align-items: center;
   justify-content: center;
-  background: transparent; /* Прозрачный фон */
+
   /* border-radius: 5px; /* Скругленные углы (можно убрать, если не нужно) */
   cursor: pointer; /* Изменение курсора при наведении */
   padding: 0; /* Убираем отступы */
@@ -554,8 +552,3 @@ ol {
 /*-----scrollbar---------*/
 /*--preloader--*/
 /* Позиционирование относительно .result__video-container */
-
-/* Позиционирование относительно .content__list-container */
-.content__list-container {
-  position: relative;
-}
