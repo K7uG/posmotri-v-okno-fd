@@ -26,8 +26,8 @@ html {
   display: flex;
   inline-size: 1200px;
   block-size: 100%;
-  margin:0 auto;
-  padding: 0 ;
+  margin: 0 auto;
+  padding: 0;
   color: #fff;
   font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
@@ -75,9 +75,8 @@ ol {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 равные колонки */
   grid-template-rows: repeat(1, 1fr); /* 1 строк  */
-   grid-template-areas:
-   "result details ";
-     
+  grid-template-areas: "result details ";
+
   gap: 30px;
   /* border: 15px solid #efd1d1; /* Для наглядности */
   flex-direction: row; /* Располагаем элементы в строку */
@@ -91,8 +90,8 @@ ol {
 .result {
   grid-area: result;
   display: grid;
-  grid-template-columns: repeat(1, content); /* 1 равные колонки */
-  grid-template-rows: repeat(2, content); /* 1 строка  */
+  grid-template-columns: repeat(1, auto); /* 1 равные колонки */
+  grid-template-rows: repeat(2, auto); /* 1 строка  */
   grid-auto-columns: auto;
   grid-template-areas:
     "video "
@@ -104,22 +103,20 @@ ol {
 }
 /*---video--*/
 .result__video-container {
-
-  margin:78px auto 16px auto;
-  padding:0;
-    position: relative; /* Относительное позиционирование для дочернего элемента */
-    grid-area: video;
-  display:flex;
-height: 386px;
+  margin: 78px auto 16px auto;
+  padding: 0;
+  position: relative; /* Относительное позиционирование для дочернего элемента */
+  grid-area: video;
+  display: flex;
+  height: 386px;
 }
 
 .result__video {
- margin: 0;
+  margin: 0;
   padding: 0;
-   width: 711px;
+  width: 711px;
   height: 386px;
-   object-fit:cover;
-   
+  object-fit: cover;
 }
 
 /*-статусы видео-*/
@@ -132,11 +129,10 @@ height: 386px;
 .search-form {
   grid-area: search-form;
   width: inherit;
- height: fit-content;
+  height: fit-content;
   display: flex;
   margin: 0 0 1.5px 0;
-    padding: 0;
- 
+  padding: 0;
 }
 .search-form__label {
   display: flex;
@@ -144,7 +140,7 @@ height: 386px;
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
-    padding: 0;
+  padding: 0;
   margin: 0;
 }
 
@@ -201,9 +197,8 @@ height: 386px;
   grid-row: 5;
   width: 225px;
   margin: 0 40px 0 0;
-    padding: 0;
-    height: fit-content;
- 
+  padding: 0;
+  height: fit-content;
 }
 .search-form__textfield {
   background: transparent; /* Прозрачный фон */
@@ -247,15 +242,14 @@ height: 386px;
   grid-row: 5;
   width: 212px;
   margin: 0 40px 0 0;
-    height: fit-content;
+  height: fit-content;
 }
 
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
   margin: 1.5px 0 0 0;
-    padding: 0;
-  
+  padding: 0;
 }
 
 .search-form__pseudo-checkbox {
@@ -272,8 +266,7 @@ height: 386px;
   position: relative;
   right: 0;
   left: 0;
-    padding: 0;
-  margin: 0;
+  padding: 0;
 }
 
 .search-form__pseudo-checkbox::before {
@@ -288,9 +281,8 @@ height: 386px;
   transition: 0.2s;
   margin: auto;
   justify-content: center;
-   
-    padding: 0;
 
+  padding: 0;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
@@ -313,7 +305,6 @@ height: 386px;
 
 .search-form__checkbox:focus-visible ~ .search-form__pseudo-checkbox::after {
   opacity: 1;
-  
 }
 
 .search-form__label-text {
@@ -328,9 +319,8 @@ height: 386px;
   letter-spacing: 0;
   text-decoration: none;
   margin: 1.5px 0 1.5px 0;
-  caret-color:transparent;
-    padding: 0;
- 
+  caret-color: transparent;
+  padding: 0;
 }
 
 /*---инпут без данных--*/
@@ -338,29 +328,29 @@ height: 386px;
 
 /*---button-найти--*/
 
-.search-form__submit-button  {
-display: flex;
+.search-form__submit-button {
+  display: flex;
   width: 194px;
-  margin:  20px 0 0 40px;
+  margin: 20px 0 0 40px;
   text-transform: capitalize;
-    padding: 0;
-    height: fit-content;
-    justify-content: end;
-   
+  padding: 0;
+  height: fit-content;
+  justify-content: end;
 }
 
 /*-----------------details---------------------*/
 .content__details {
   grid-area: details;
   display: grid;
-  grid-template-columns: repeat(2, content); /* 3 равные колонки */
-  grid-template-rows: repeat(2, content); /* 2 строк  */
+  grid-template-columns: repeat(2, auto); /* 3 равные колонки */
+  grid-template-rows: repeat(2, auto); /* 2 строк  */
   grid-auto-columns: auto;
-   grid-template-areas:
-" title . . "
-"content__list-container content__list-container content__list-container ";
+  grid-template-areas:
+    " title . . "
+    "content__list-container content__list-container content__list-container ";
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
 /*--------title---------*/
@@ -414,7 +404,6 @@ display: flex;
 
 /*-card-*/
 .content__list-item {
-  
   display: flex;
   width: inherit;
   flex-direction: row;
@@ -460,8 +449,6 @@ display: flex;
   display: flex;
   align-items: start;
   letter-spacing: 2px;
-  
-  
 }
 
 /*--description--*/
@@ -471,7 +458,7 @@ display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 3;
-    padding: 0;
+  padding: 0;
   margin: 0;
 }
 .content__video-card-description {
@@ -489,7 +476,7 @@ display: flex;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-    padding: 0;
+  padding: 0;
   margin: 0;
 }
 
@@ -502,7 +489,7 @@ display: flex;
 
   display: block;
   outline: none;
-    padding: 0;
+  padding: 0;
   margin: 0;
 }
 
@@ -523,7 +510,7 @@ display: flex;
 
   /* border-radius: 5px; /* Скругленные углы (можно убрать, если не нужно) */
   cursor: pointer; /* Изменение курсора при наведении */
- 
+
   outline: none; /* Убираем выделение при клике */
   color: #fff;
   border: 1px solid white; /* Белая граница толщиной 1 пиксель */
@@ -556,13 +543,12 @@ display: flex;
 }
 .button:focus-visible {
   outline: 2px solid #ffffff;
-
+  opacity: 1;
 }
 
 .more-button {
   width: inherit;
   display: flex; /* Как бы нам хотелось `display: упражнение "жим-лежа"`, но пока что подойдет `block` */
-  
 }
 
 .button::before {
@@ -579,10 +565,6 @@ display: flex;
 }
 
 /* Эффект при наведении */
-.button:focus-visible {
-  outline:1px solid white;
-  opacity: 1;
-}
 
 /*-----scrollbar---------*/
 /*--preloader--*/
@@ -594,9 +576,7 @@ display: flex;
   left: 0;
 }
 /* Позиционирование относительно .content__list-container */
-.content__list-container {
-  position: relative;
-}
+
 .preloader.relative-to-content {
   position: relative;
 }
