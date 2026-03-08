@@ -35,6 +35,7 @@ html {
   align-items: center;
   align-content: center;
   justify-content: center;
+  
   /*outline: green 3px solid;*/
 }
 
@@ -76,7 +77,6 @@ ol {
   grid-template-columns: repeat(2, 1fr); /* 2 равные колонки */
   grid-template-rows: repeat(1, 1fr); /* 1 строк  */
   grid-template-areas: "result details ";
-
   gap: 30px;
   /* border: 15px solid #efd1d1; /* Для наглядности */
   flex-direction: row; /* Располагаем элементы в строку */
@@ -96,7 +96,6 @@ ol {
   grid-template-areas:
     "video "
     "search-form ";
-
   width: 711px;
   padding: 0;
   margin: 0;
@@ -281,7 +280,6 @@ ol {
   transition: 0.2s;
   margin: auto;
   justify-content: center;
-
   padding: 0;
 }
 
@@ -327,14 +325,9 @@ ol {
 
 /*---button-найти--*/
 
-.search-form__submit-button {
-  display: flex;
+button.button.search-form__submit-button {
   width: 194px;
-  margin: 20px 0 0 40px;
-  text-transform: capitalize;
-  padding: 0;
-  height: fit-content;
-  justify-content: end;
+  margin: 20px 0 0 0;
 }
 
 /*-----------------details---------------------*/
@@ -349,7 +342,6 @@ ol {
     "content__list-container content__list-container content__list-container ";
   padding: 0;
   margin: 0;
-  
 }
 
 /*--------title---------*/
@@ -358,7 +350,6 @@ ol {
   grid-column: 1/2;
   grid-row: 1/2;
   width: 259px;
-
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
@@ -390,7 +381,7 @@ ol {
   scroll-snap-type: inherit;
   overflow: auto;
   height: 298px;
-   position: relative;
+  position: relative;
 }
 
 .content__video-card-title {
@@ -519,15 +510,12 @@ ol {
   background: transparent; /* Прозрачный фон */
   align-items: center;
   justify-content: center;
-
   /* border-radius: 5px; /* Скругленные углы (можно убрать, если не нужно) */
   cursor: pointer; /* Изменение курсора при наведении */
-
   outline: none; /* Убираем выделение при клике */
   color: #fff;
   border: 1px solid white; /* Белая граница толщиной 1 пиксель */
   min-height: 34px;
-
   font-family:
     Fira Sans Condensed,
     Arial,
@@ -586,12 +574,4 @@ ol {
   position: relative;
   top: 0;
   left: 0;
-}
-/* Позиционирование относительно .content__list-container */
-./*content__list-container {
- position: relative;
-}*/
-
-.preloader.relative-to-content {
-  position: relative;
 }
