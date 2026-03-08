@@ -16,7 +16,6 @@
         <div class="result__video-container">
           <video src="" controls class="result__video" poster=""></video>
         </div>
-
         <form class="search-form">
           <fieldset class="search-form__fieldset">
             <h2 class="search-form__fieldset-title">Город</h2>
@@ -26,11 +25,10 @@
                 type="text"
                 placeholder="Санкт Петербург, например"
                 name="city"
-                class="search-form__label-text search-form__textfield"
+                class="search-form__textfield"
               />
             </label>
           </fieldset>
-
           <fieldset class="search-form__fieldset">
             <h2 class="search-form__fieldset-title">Время суток</h2>
             <div class="search-form__checkbox-list">
@@ -66,13 +64,11 @@
               </label>
             </div>
           </fieldset>
-
-          <button type="submit" class="search-form__submit-button  button ">
+          <button type="submit" class="button search-form__submit-button">
             Найти
           </button>
         </form>
       </section>
-
       <section class="content__details">
         <h1 class="title">
           <span class="content__accent">По-</span><br />смотри<br />в окно
@@ -88,7 +84,6 @@
     <!-- ТЕМПЛЕЙТЫ -->
 
     <template class="preloader-template">
-      <!--  Шаблон прелоадера -->
       <div class="preloader">
         <div class="preloader-chasing-squares">
           <div class="square"></div>
@@ -100,8 +95,6 @@
     </template>
 
     <template class="cards-list-item-template">
-      <!--Шаблон пункта списка с карточкой видео — 
-      в него подставляются данные для создания нужного количества карточек.-->
       <li class="content__list-item">
         <a href="#0" class="content__card-link">
           <article class="content__video-card">
@@ -114,14 +107,11 @@
         </a>
       </li>
     </template>
-
-    <template class="more-button-template"
-      ><!-- Шаблон кнопки «Показать ещё» -->
+    <template class="more-button-template">
       <button class="button more-button">Показать еще</button>
     </template>
 
-    <template class="error-template"
-      ><!-- Шаблон блока с ошибкой  -->
+    <template class="error-template">
       <div class="error">
         <h2 class="error__title">Из этого города нет видео :(</h2>
       </div>

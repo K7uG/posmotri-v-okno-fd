@@ -35,7 +35,7 @@ html {
   align-items: center;
   align-content: center;
   justify-content: center;
-  
+
   /*outline: green 3px solid;*/
 }
 
@@ -443,6 +443,10 @@ button.button.search-form__submit-button {
   opacity: 0;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
 /* Эффект при наведении */
 .content__card-link:focus-visible::before {
   opacity: 1;
@@ -451,7 +455,6 @@ button.button.search-form__submit-button {
 .content__video-card {
   display: flex;
   align-items: start;
-  letter-spacing: 2px;
 }
 
 /*--description--*/
@@ -569,9 +572,3 @@ button.button.search-form__submit-button {
 /*-----scrollbar---------*/
 /*--preloader--*/
 /* Позиционирование относительно .result__video-container */
-.preloader .result__video-container {
-  /* Прелоадер будет позиционироваться относительно этого контейнера */
-  position: relative;
-  top: 0;
-  left: 0;
-}
