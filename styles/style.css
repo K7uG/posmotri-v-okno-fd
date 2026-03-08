@@ -319,7 +319,6 @@ ol {
   letter-spacing: 0;
   text-decoration: none;
   margin: 1.5px 0 1.5px 0;
-  caret-color: transparent;
   padding: 0;
 }
 
@@ -350,7 +349,7 @@ ol {
     "content__list-container content__list-container content__list-container ";
   padding: 0;
   margin: 0;
-  position: relative;
+  
 }
 
 /*--------title---------*/
@@ -391,6 +390,7 @@ ol {
   scroll-snap-type: inherit;
   overflow: auto;
   height: 298px;
+   position: relative;
 }
 
 .content__video-card-title {
@@ -588,6 +588,9 @@ ol {
   left: 0;
 }
 /* Позиционирование относительно .content__list-container */
+./*content__list-container {
+ position: relative;
+}*/
 
 .preloader.relative-to-content {
   position: relative;
